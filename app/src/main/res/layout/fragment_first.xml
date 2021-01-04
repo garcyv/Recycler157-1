@@ -7,6 +7,22 @@
     android:background="@android:color/holo_blue_dark"
     tools:context=".FirstFragment">
 
+    <TextView
+        android:id="@+id/textView_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recycler View"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.781" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnfab"
         android:layout_width="wrap_content"
@@ -19,15 +35,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="260dp"
+        android:layout_height="327dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="88dp"
         android:background="@android:color/holo_blue_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
