@@ -9,21 +9,35 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.recycler157_1.databinding.FragmentSecondBinding;
+
 public class SecondFragment extends Fragment {
+    private static final String ARG_PARAM1 = "name";
+    private String name;
+    private FragmentSecondBinding mBinding;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            name = getArguments().getString(ARG_PARAM1);
+        }
+    }
 
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second, container, false);
+        mBinding = FragmentSecondBinding.inflate(inflater,container, false);
+        return mBinding.getRoot();
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        mBinding.textviewSecond.setText(name);
 
-        view.findViewById(R.id.button_second).setOnClickListener(new View.OnClickListener() {
+        mBinding.buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(SecondFragment.this)
